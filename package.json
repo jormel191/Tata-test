@@ -1,0 +1,16 @@
+{
+  "name": "Tata-Test",
+  "version": "1.0.0",
+  "description": "Test Selenium with cucumber",
+  "main": "index.js",
+  "scripts": {
+    "report": "node index.js"
+  },
+
+  "author": "Jormel",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "multiple-cucumber-html-reporter": "^1.18.0"
+  }
+}
