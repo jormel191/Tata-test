@@ -31,7 +31,7 @@ public class test extends TestBase {
 
     @Then("User extracts all the information to the Excel file")
     public void exportInformation() throws Exception {
-       // resultPage.writeExcel();
+        resultPage.writeExcel();
     }
 }
 
