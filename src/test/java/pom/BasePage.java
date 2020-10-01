@@ -3,6 +3,8 @@ package pom;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
+import java.util.List;
+
 
 public class BasePage {
 
@@ -50,4 +52,13 @@ public class BasePage {
 
     }
 
+    public void sendKeys(WebElement element) throws Exception {
+        try {
+            element.sendKeys(Keys.TAB);
+        } catch (Exception e) {
+            throw new Exception("No se pudo encontrar el elemento");
+        }
+
+    }
 }
+

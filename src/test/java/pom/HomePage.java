@@ -4,6 +4,8 @@ package pom;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class HomePage extends BasePage {
 
     private String titleHomePage = "Compare Laptops - Latest laptop Comparison by Price, Specification, Features, Performance & Reviews | Gadgets Now";
@@ -14,14 +16,19 @@ public class HomePage extends BasePage {
     @FindBy(className = "bl_btn")
     private WebElement btnCompareLocator;
 
+    @FindBy(className = "srchbox")
+    private List<WebElement> SecondAddDevices;
+
 
     public HomePage(WebDriver driver) {
         super(driver);
+    }
 
+    public WebElement getSecondAddDevices() {
+        return SecondAddDevices.get(1);
     }
 
     public boolean homePageIsDisplayed() throws Exception {
-
         return this.getTitle().equals(titleHomePage);
     }
 
@@ -30,11 +37,9 @@ public class HomePage extends BasePage {
         firstAddDeviceLocator.sendKeys(Keys.TAB);
     }
 
-
     public void typeSecondDevice(String product) throws Exception {
-        WebElement SecondAddDevices = driver.findElements(By.className("srchbox")).get(1);
-        this.sendKeys(product, SecondAddDevices);
-        SecondAddDevices.sendKeys(Keys.TAB);
+        this.sendKeys(product, getSecondAddDevices());
+        this.sendKeys(getSecondAddDevices());
 
     }
 

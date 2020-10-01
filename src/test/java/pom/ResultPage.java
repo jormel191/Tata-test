@@ -63,14 +63,14 @@ public class ResultPage extends BasePage {
 
 
         WebElement tableList = driver.findElement(By.className("inr_tbl"));
-        List<WebElement> TitleTable = tableList.findElements(By.className("title"));
-        List<WebElement> valeTable = tableList.findElements(By.className("val"));
+        List<WebElement> tableTitle = tableList.findElements(By.className("title"));
+        List<WebElement> tableValue = tableList.findElements(By.className("val"));
 
-        for (int i = 0; i < TitleTable.size(); i++) {
+        for (int i = 0; i < tableTitle.size(); i++) {
             HSSFRow dataRow = sheet.createRow(i + 1);
-            dataRow.createCell(0).setCellValue(TitleTable.get(i).getText());
-            dataRow.createCell(1).setCellValue(valeTable.get(i * 4).getText());
-            dataRow.createCell(2).setCellValue(valeTable.get(i * 4 + 1).getText());
+            dataRow.createCell(0).setCellValue(tableTitle.get(i).getText());
+            dataRow.createCell(1).setCellValue(tableValue.get(i * 4).getText());
+            dataRow.createCell(2).setCellValue(tableValue.get(i * 4 + 1).getText());
 
         }
 

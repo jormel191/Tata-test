@@ -5,14 +5,14 @@ Feature:Gadget snow
     Given user is on the page Gadget snow
     When User selects two pc to compare "<product1>" and "<product2>"
     Then User is redirected to the result page
-    And User extracts all the information to the Excel file
+    And User extracts summary information to the Excel file
 
 
 
   Examples:
 
     | product1     | product2        |
-    | Lenovo B40-80 | Lenovo E41-80    |
+    | Lenovo B40-80| Lenovo E41-80   |
 
 
 
